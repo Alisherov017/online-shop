@@ -11,6 +11,7 @@ const Slider = () => {
   return (
     <div className="relative pb-4">
       <div>
+        //! след назад
         {sliderData.map((item) => {
           return (
             <div
@@ -32,9 +33,19 @@ const Slider = () => {
               </div>
               <div>
                 <p className="text-white text-4xl font-inter font-bold tracking-normal leading-none">
-                  {item.text}
+                  {parseInt(item.id) === sliderIndex && item.text}
                 </p>
               </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="flex absolute bottom-12  left-[45%]">
+        {sliderData.map((dot, index) => {
+          return (
+            <div className="mr-4" key={dot.id}>
+              <div></div>
             </div>
           );
         })}
