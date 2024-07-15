@@ -1,3 +1,4 @@
+import { slider } from "@material-tailwind/react";
 import { sliderData } from "../../assets/data/dummyData";
 import { createSlice } from "@reduxjs/toolkit";
 
@@ -16,7 +17,11 @@ export const sliderSlice = createSlice({
     precSlide(state, action) {
       state.value = action.payload < 0 ? state.length - 1 : action.payload;
     },
-    dotSlide() {},
+    dotSlide(state, action) {
+      const slide = action.payload;
+      console.log(slide, "dotSlide");
+      state.value = slide;
+    },
   },
 });
 
